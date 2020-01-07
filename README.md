@@ -1,5 +1,5 @@
 # bmi
 
-A simple BMI Calculator. 
+A simple BMI Calculator created with Flutter.
 
 
