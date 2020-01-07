@@ -1,4 +1,5 @@
 import 'package:bmi/colors.dart';
+import 'package:bmi/ui/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -13,6 +14,20 @@ class _MyHomePageState extends State<MyHomePage> {
   Gender _selectedGender = Gender.male;
   int _selectedWeight = 50;
   int _selectedHeight = 160;
+
+  void _goToResult() {
+    double result =
+        (_selectedWeight / ((_selectedHeight / 100) * (_selectedHeight / 100)))
+            .floorToDouble();
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ResultPage(
+          result: result,
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +61,9 @@ class _MyHomePageState extends State<MyHomePage> {
       width: (MediaQuery.of(context).size.width / 100) * 90,
       child: RaisedButton(
         elevation: 0,
-        onPressed: () {},
+        onPressed: () {
+          _goToResult();
+        },
         color: MyColors.green,
         child: Text(
           "Calculate",

@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:bmi/colors.dart';
 import 'package:bmi/data/strings.dart';
-import 'package:bmi/ui/home.dart';
+import 'package:bmi/ui/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
